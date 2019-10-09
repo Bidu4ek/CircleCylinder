@@ -35,18 +35,17 @@ public class Main {
             check = in.nextLine();
             try {
                 quantity = Integer.parseInt(check);
-                isCorrect = true;
+                if (quantity > 0)
+                    isCorrect = true;
             } catch (IllegalArgumentException e) {
                 System.out.print("Введены неверные данные, введите количество заново!\r\n");
                 isCorrect = false;
-            }
-            if (isCorrect) {
-                message = "Кол-во цилиндров:" + check + "\r\n" + "Кол-во окружностей:"
+            }          
+        }
+            message = "Кол-во цилиндров:" + check + "\r\n" + "Кол-во окружностей:"
                         + Integer.toString(quantity * quantityCirclesToCylinder) + "\r\n";
                 System.out.print(message);
 
-            }
-        }
         arraySquareCircle = new double[quantity];
         arrayVolumeCylinder = new double[quantity];
         System.out.print("Теперь введите высоту каждого цилиндра и радиус окружностей:");
